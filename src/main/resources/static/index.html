@@ -1,0 +1,37 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <form method="POST" action="/exchange">
+            <div id="importes">
+                <p>Importe: <input id="imputimportes" name="importe" type="number" placeholder="Valor a cambiar..." size="25"/></p>
+            </div>
+            <div id="divisas">
+                <div id="monedaorigen">
+                    <label for="divisaorigen">Moneda origen:</label>
+                    <select id="divisaorigen" name="divisaOrigen">
+                        <option value="EUR">€EUR</option>
+                        <option value="GBP">£GBP</option>
+                        <option value="USD">$USD</option>
+                        <option value="JPY">¥JPY</option>
+                    </select>
+                </div>
+                <div id="monedadestino>">
+                    <label for="divisadestino">Moneda destino:</label>
+                    <select id="divisadestino" name="divisaDestino">
+                        <option value="EUR">€EUR</option>
+                        <option value="GBP">£GBP</option>
+                        <option value="USD">$USD</option>
+                        <option value="JPY">¥JPY</option>
+                    </select>
+                </div>
+            </div>
+            <div id="submit">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+
+    </body>
+</html>
