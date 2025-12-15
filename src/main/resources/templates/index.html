@@ -1,0 +1,51 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<form th:action="@{/exchange}" th:object="${formDto}" method="post">
+
+    <p>
+        Importe:
+        <input type="number" step="0.01" th:field="*{importe}" />
+    </p>
+
+    <p>
+        Moneda origen:
+        <select th:field="*{divisaOrigen}">
+            <option value="EUR">€EUR</option>
+            <option value="GBP">£GBP</option>
+            <option value="USD">$USD</option>
+            <option value="JPY">¥JPY</option>
+        </select>
+    </p>
+
+    <p>
+        Moneda destino:
+        <select th:field="*{divisaDestino}">
+            <option value="EUR">€EUR</option>
+            <option value="GBP">£GBP</option>
+            <option value="USD">$USD</option>
+            <option value="JPY">¥JPY</option>
+        </select>
+    </p>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<div th:if="${result != null}">
+    <hr/>
+    <p>
+        <strong>
+            <span th:text="${formDto.importe}"></span>
+            <span th:text="${formDto.divisaOrigen}"></span>
+            =
+            <span th:text="${result}"></span>
+            <span th:text="${formDto.divisaDestino}"></span>
+        </strong>
+    </p>
+</div>
+
+</body>
+</html>
