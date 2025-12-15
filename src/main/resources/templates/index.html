@@ -1,8 +1,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <title>Cambio de Divisas</title>
 </head>
 <body>
+
+<div>
+    <span>Usuario: <strong th:text="${#authentication.name}"></strong></span>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Cerrar Sesión</button>
+    </form>
+</div>
 
 <form th:action="@{/exchange}" th:object="${formDto}" method="post">
 
