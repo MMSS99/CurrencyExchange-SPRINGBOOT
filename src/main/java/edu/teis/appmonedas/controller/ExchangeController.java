@@ -4,12 +4,19 @@ import edu.teis.appmonedas.dto.IndexFormDto;
 import edu.teis.appmonedas.service.ExchangeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ExchangeController {
 
     private final ExchangeService exchangeService = new ExchangeService();
+
+    @GetMapping("/")
+    public String index(Model model) {
+        model.addAttribute("formDto", new IndexFormDto());
+        return "index";
+    }
 
     @PostMapping("/exchange")
     public String exchange(IndexFormDto formDto, Model model){
@@ -22,6 +29,6 @@ public class ExchangeController {
 
         model.addAttribute("formDto",formDto);
         model.addAttribute("result",result);
-        return "exchange";
+        return "index";
     }
 }
