@@ -2,10 +2,12 @@ package edu.teis.appmonedas.storage;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.stereotype.Component;
 
 import java.net.URL;
 import java.util.Map;
 
+@Component
 public class CurrencyStorage {
 
     public Double GetExchangeRate(String baseCurrency, String exchangedCurrency){

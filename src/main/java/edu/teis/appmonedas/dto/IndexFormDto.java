@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class IndexFormDto {
-    private float importe;
+    private Double importe;
     private String divisaOrigen;
     private String divisaDestino;
 
